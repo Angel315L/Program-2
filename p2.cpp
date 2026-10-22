@@ -37,7 +37,7 @@ int main()
    // start off with a "full" queue
    for (int i = 0; i < 10; i++)
    {
-   request r = (createRandomResquest());
+   request r = (createRandomRequest());
    lb.addRequest(r);
    }
    

@@ -17,7 +17,7 @@ void loadbalancer::incTime()
   
 void loadbalancer::addRequest(request r)
 {
- requestqueue.push(r);
+ requestQueue.push(r);
    incTime();
  
 }
@@ -25,10 +25,10 @@ void loadbalancer::addRequest(request r)
 request loadbalancer::getRequest()
 {
    incTime();
-   if (!requestqueue.empty()) {
-      request r = requestqueue.front(); //queue
+   if (!requestQueue.empty()) {
+      request r = requestQueue.front(); //queue
       //request r = requestQueue.top(); // priority_queue, stack
-      requestqueue.pop();
+      requestQueue.pop();
       return r;
    }
 
@@ -42,10 +42,10 @@ request loadbalancer::getRequest()
 
 bool loadbalancer::isRequestQueueEmpty()
 {
-  return requestqueue.empty();
+  return requestQueue.empty();
 } 
 
 int loadbalancer::getSize()
 {
-  
+  return requestQueue.size();
 } 
